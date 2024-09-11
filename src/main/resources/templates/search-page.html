@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, ">
+    <title>Giga Search</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/customstyles.css}" rel="stylesheet">
+</head>
+
+<body style="min-height: 100vh;">
+
+<!-- Top Bar -->
+<nav class="navbar navbar-light d-flex justify-content-between bg-custom-color"> <!-- we took out bg-light to add custom colors -->
+    <!-- Add a button that leads to "/xml/upload-form" -->
+    <!-- <a href="/xml/upload-form" class="btn btn-secondary">Upload XML</a> -->
+    <a th:href="@{/xml/upload-form}" class="btn btn-secondary ml-2 btn-custom-color">Upload XML</a>
+    <span class="navbar-brand mb-0 h1">Giga Search</span> <!-- we took out mx-auto -->
+    <div style="width: 105px; height: 0; opacity: 0;"></div> <!-- Transparent placeholder -->
+</nav>
+
+<!-- Container with Logo and Search Form -->
+<!-- Logo -->
+<div class="text-center content-logo-center">
+    <img th:src="@{/images/GigaSearch-logos_transparent.png}" alt="GigaSearch Logo" height="300">
+</div>
+
+<!-- Search Form -->
+<div class="container mt-4 content-centered">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form th:action="@{/search}" method="get" class="text-center">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" name="query" th:value="${query}">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-secondary btn-custom-color" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* Custom Styles */
+.bg-custom-color {
+    background-color: var(--secondary);
+    /* or any other custom color variable */
+}
+
+.btn-custom-color {
+    background-color: var(--dark);
+    /* or any other custom color variable */
+    color: #ffffff;
+    /* Optional: Set text color to white or another contrasting color */
+}
+
+/* Search Bar Center */
+.content-centered {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Logo Center */
+.content-logo-center {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}

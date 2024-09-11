@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, ">
+    <title>Giga Search</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/customstyles.css}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <nav class="navbar navbar-light bg-custom-color">
+        <span class="mx-auto navbar-brand mb-0 h1">Giga Search</span>
+    </nav>
+
+    <div class="container">
+        <div class="row mt-4">
+            <h1>Search Results</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Product Name</th>
+                        <th>Product Brand</th>
+                        <th>Product Category</th>
+                        <th>Product Url</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="products : ${productsList}">
+                        <td th:text="${productsStat.index+1}"></td>
+                        <td th:text="${products.productName}"></td>
+                        <td th:text="${products.productBrand}"></td>
+                        <td th:text="${products.productCategory}"></td>
+                        <td th:text="${products.productUrl}"></td>
+                        <td>
+                            <!-- Button to navigate to product-details.html -->
+                            <a th:href="@{'/product-details/' + ${products.id}}" class="btn btn-info btn-sm">Details</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
